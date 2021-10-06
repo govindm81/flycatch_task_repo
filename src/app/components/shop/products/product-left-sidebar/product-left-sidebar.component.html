@@ -1,0 +1,24 @@
+<div class="left-sidebar-wrapper sec-padding">
+<h3 style="text-align: center; font-size: 25px;">New Posts</h3>
+<div class="container">
+  <div class="sidebar-wrapper" fxLayout='row' fxLayout.lt-md="column" >
+        <div fxFlex="100" fxFlex.lt-sm="100" class="all-products" ngClass.gt-sm="p-left">
+              <div [@Animation]="animation" fxLayout="row wrap" class="products-wrapper">
+                  <div *ngFor="let post of allItems | orderBy:sortByOrder | paginate: { itemsPerPage: 12, currentPage: page  }" fxFlex="100" [fxFlex.gt-sm]="viewCol" fxFlex.sm="50" class="col">
+                     <div class="product-box">
+                        <app-product [posts]="post"></app-product>
+                     </div>
+                  </div>
+              </div>
+            
+              <div *ngIf="posts.length > 0" fxLayout="row wrap ">
+                  <div fxFlex="100">
+                      <mat-card class="p-0 text-center no-shadow">
+                          <pagination-controls class="product-pagination" autoHide="true" maxSize="5" (pageChange)="onPageChanged($event)"></pagination-controls>
+                      </mat-card>
+                  </div>
+              </div>
+            </div>
+  </div>
+</div>
+</div>

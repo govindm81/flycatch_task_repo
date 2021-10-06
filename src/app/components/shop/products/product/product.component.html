@@ -1,0 +1,16 @@
+<div class="product-item" (click)="postDetails(posts.id)" style="cursor: pointer;">
+  <mat-card fxLayout="column" style="background: #f3e8e8;">
+    <div class="product-img">
+    </div>
+     <div class="product-info-wrapper">
+        <div class="title-wrap" style="display: flex;padding-bottom: 20px;">
+            <mat-icon style="padding-right: 10px;">account_circle</mat-icon>
+           <h4>{{posts.title}}</h4>
+        </div>
+        <div>
+           <span class="post-body">{{posts.body}}</span>
+        </div>
+
+     </div>
+  </mat-card>
+</div>
